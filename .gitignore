@@ -1,4 +1,7 @@
 posts/*.md
 _site
 _bin
+src/_cache
 deno.lock
+
+.DS_Store

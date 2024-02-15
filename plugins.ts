@@ -10,6 +10,8 @@ import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed, { Options as FeedOptions } from "lume/plugins/feed.ts";
 import readingInfo from "lume/plugins/reading_info.ts";
+import picture from "lume/plugins/picture.ts";
+import transformImages from "lume/plugins/transform_images.ts";
 import { merge } from "lume/core/utils/object.ts";
 import toc from "https://deno.land/x/lume_markdown_plugins@v0.7.0/toc.ts";
 import image from "https://deno.land/x/lume_markdown_plugins@v0.7.0/image.ts";
@@ -51,6 +53,8 @@ export default function (userOptions?: Options) {
       .use(date(options.date))
       .use(metas())
       .use(image())
+      .use(picture())
+      .use(transformImages())
       .use(footnotes())
       .use(resolveUrls())
       .use(slugifyUrls())
