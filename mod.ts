@@ -1,8 +1,8 @@
-import plugins, { Options } from "./plugins.ts";
+import plugins, { Options } from "./deps.ts";
 
 import "lume/types.ts";
 
-export type { Options } from "./plugins.ts";
+export type { Options } from "./deps.ts";
 
 export default function (options: Partial<Options> = {}) {
   return (site: Lume.Site) => {
