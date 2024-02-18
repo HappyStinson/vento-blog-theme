@@ -36,6 +36,36 @@
   }
 }
 
+.post-body {
+  & img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    filter: drop-shadow(0.25rem 0.25rem 0.5rem #000000);
+  }
+
+  & figure, #instapost {
+    margin: 1rem 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  & figure img {
+    margin: auto;
+    display: block;
+  }
+
+  & figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5rem 1rem 1rem;
+    background: linear-gradient(to top, hsla(230, 40%, 5%, 0.95), hsla(230, 40%, 5%, 0));
+  }
+}
+
 .post-tags {
   display: flex;
   flex-flow: row wrap;
