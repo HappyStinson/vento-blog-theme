@@ -5,6 +5,7 @@ import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
+import relativeUrls from "lume/plugins/relative_urls.ts";
 import metas from "lume/plugins/metas.ts";
 import pagefind, { Options as PagefindOptions } from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
@@ -58,6 +59,7 @@ export default function (userOptions?: Options) {
       .use(footnotes())
       .use(resolveUrls())
       .use(slugifyUrls())
+      .use(relativeUrls())
       .use(terser())
       .use(pagefind(options.pagefind))
       .use(sitemap())
