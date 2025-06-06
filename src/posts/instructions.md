@@ -1,5 +1,6 @@
 ---
 title: How to install this theme
+date: '2025-06-06'
 author:
   - Óscar Otero
   - Rasmus Nordling

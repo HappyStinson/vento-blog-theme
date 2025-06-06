@@ -7,4 +7,4 @@ menu:
   order: 2
 ---
 
-Hola
+Hej!
