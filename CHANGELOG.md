@@ -6,6 +6,85 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.16.0] - 2025-05-07
+### Added
+- Paginate the post of a tag
+- Authors in the archive page (only if more than 1 author is found).
+
+### Changed
+- Upgrade to Lume 3.
+
+## [0.15.10] - 2024-12-31
+### Added
+- Author field to CMS [#35].
+
+## [0.15.9] - 2024-12-30
+### Fixed
+- HTML tag closed in the wrong place [#34]
+
+## [0.15.8] - 2024-12-03
+### Fixed
+- Updated dependencies.
+
+## [0.15.7] - 2024-12-03
+### Added
+- Comments from Bluesky.
+
+### Fixed
+- Improved comments responsiveness.
+- Title of the 404 page.
+
+## [0.15.6] - 2024-10-17
+### Fixed
+- Updated CMS to the latest version [#27].
+- Updated other dependencies.
+
+## [0.15.5] - 2024-07-21
+### Added
+- `target` option to the links in the menu [#23].
+
+### Fixed
+- Allow to translate the title of the Archive pages [#24].
+- TOC i18n is not used in the template [#22].
+- Color of the page titles.
+
+## [0.15.4] - 2024-06-22
+### Fixed
+- Copy the files uploaded by the CMS [#21].
+- Updated deps.
+
+## [0.15.3] - 2024-06-01
+### Added
+- Allow to customize the post URL in the CMS.
+
+### Fixed
+- Comments layout on mobile.
+- Colors of titles
+
+## [0.15.2] - 2024-03-29
+### Changed
+- Updated `@lumeland/ds` and import it from unpkg CDN.
+- Use import map for LumeCMS.
+
+## [0.15.1] - 2024-03-20
+### Fixed
+- Updated `@lumeland/ds`.
+
+## [0.15.0] - 2024-03-19
+### Added
+- Theme switcher button.
+- CMS configuration
+
+### Changed
+- Updated `@lumeland/ds` to v5, which provides several improvements like:
+  - Inter font upgraded to v4.
+  - Improved code color syntax.
+  - Fixed pagination layout.
+  - Several color and spacing fixes.
+
+### Removed
+- `/demo` folder.
+
 ## [0.14.0] - 2024-01-08
 ### Added
 - Allow to configure the `feed` plugin.
@@ -182,7 +261,26 @@ First version
 [#16]: https://github.com/lumeland/theme-simple-blog/issues/16
 [#17]: https://github.com/lumeland/theme-simple-blog/issues/17
 [#19]: https://github.com/lumeland/theme-simple-blog/issues/19
+[#21]: https://github.com/lumeland/theme-simple-blog/issues/21
+[#22]: https://github.com/lumeland/theme-simple-blog/issues/22
+[#23]: https://github.com/lumeland/theme-simple-blog/issues/23
+[#24]: https://github.com/lumeland/theme-simple-blog/issues/24
+[#27]: https://github.com/lumeland/theme-simple-blog/issues/27
+[#34]: https://github.com/lumeland/theme-simple-blog/issues/34
+[#35]: https://github.com/lumeland/theme-simple-blog/issues/35
 
+[0.16.0]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.10...v0.16.0
+[0.15.10]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.9...v0.15.10
+[0.15.9]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.8...v0.15.9
+[0.15.8]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.7...v0.15.8
+[0.15.7]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.6...v0.15.7
+[0.15.6]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.5...v0.15.6
+[0.15.5]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.4...v0.15.5
+[0.15.4]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.3...v0.15.4
+[0.15.3]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.2...v0.15.3
+[0.15.2]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.1...v0.15.2
+[0.15.1]: https://github.com/lumeland/theme-simple-blog/compare/v0.15.0...v0.15.1
+[0.15.0]: https://github.com/lumeland/theme-simple-blog/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/lumeland/theme-simple-blog/compare/v0.13.3...v0.14.0
 [0.13.3]: https://github.com/lumeland/theme-simple-blog/compare/v0.13.2...v0.13.3
 [0.13.2]: https://github.com/lumeland/theme-simple-blog/compare/v0.13.1...v0.13.2

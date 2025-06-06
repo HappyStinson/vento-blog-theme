@@ -1,6 +1,6 @@
 posts/*.md
+src/uploads
 _site
 _bin
-src/_cache
-
-.DS_Store
+deno.lock
+src/posts/posts

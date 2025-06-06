@@ -13,9 +13,10 @@ import readingInfo from "lume/plugins/reading_info.ts";
 import picture from "lume/plugins/picture.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import { merge } from "lume/core/utils/object.ts";
-import toc from "https://deno.land/x/lume_markdown_plugins@v0.7.0/toc.ts";
-import image from "https://deno.land/x/lume_markdown_plugins@v0.7.0/image.ts";
-import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.7.0/footnotes.ts";
+import toc from "https://deno.land/x/lume_markdown_plugins@v0.8.0/toc.ts";
+import image from "https://deno.land/x/lume_markdown_plugins@v0.8.0/image.ts";
+import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.8.0/footnotes.ts";
+import { alert } from "npm:@mdit/plugin-alert@0.14.0";
 
 import "lume/types.ts";
 
@@ -62,9 +63,11 @@ export default function (userOptions?: Options) {
       .use(pagefind(options.pagefind))
       .use(sitemap())
       .use(feed(options.feed))
-      .copy("fonts")
-      .copy("js")
-      .copy("favicon.png")
+      .add("fonts")
+      .add([".css"])
+      .add("js")
+      .add("favicon.png")
+      .add("uploads")
       .mergeKey("extra_head", "stringArray")
       .preprocess([".md"], (pages) => {
         for (const page of pages) {
@@ -74,16 +77,13 @@ export default function (userOptions?: Options) {
         }
       });
 
-    // Basic CSS Design System
-    site.remoteFile(
-      "_includes/css/ds.css",
-      "https://unpkg.com/@lumeland/ds@0.3.3/ds.css",
-    );
+    // Alert plugin
+    site.hooks.addMarkdownItPlugin(alert);
 
     // Mastodon comment system
     site.remoteFile(
       "/js/comments.js",
-      "https://unpkg.com/@oom/mastodon-comments@0.2.1/src/comments.js",
+      "https://cdn.jsdelivr.net/npm/@oom/mastodon-comments@0.3.2/src/comments.js",
     );
   };
 }

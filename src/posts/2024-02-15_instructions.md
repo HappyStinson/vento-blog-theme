@@ -8,72 +8,51 @@ tags:
 ---
 
 **Simple blog** is a clean and minimal blog theme for Lume, with support for
-tags and authors. It allows to build your own blog **in seconds**, providing
-also support for RSS.
+tags and authors. It allows you to build your own blog **in seconds**, and
+provides Atom and JSON feeds for your subscribers.
 
 <!--more-->
 
-To use it, just import the theme in your `_config.ts` file:
+The **fastest and easiest** way to configure this theme is the
+[Lume init command](https://deno.land/x/lume_init), which you can also copy
+easily from the [Simple Blog theme page](https://lume.land/theme/simple-blog/).
+Running:
 
-```js
-import lume from "lume";
-import blog from "https://deno.land/x/lume_theme_simple_blog/mod.ts";
+```bash
+deno run -A https://lume.land/init.ts --theme=simple-blog
+```
+
+will create a new project with Simple Blog configured. Edit the `_data.yml` file
+in your blog root folder with your data to customize the site title,
+description, and metadata.
+
+Posts must be saved in the `posts` folder. For example,
+`posts/my-first-posts.md`.
+
+## Install as a remote theme
+
+To add the theme to an existing Lume project, import it in your `_config.ts`
+file as a remote module. Update it by changing the version number in the import
+URL:
+
+```ts
+import lume from "lume/mod.ts";
+import blog from "https://deno.land/x/lume_theme_simple_blog@v0.15.6/mod.ts";
 
 const site = lume();
+
 site.use(blog());
 
 export default site;
 ```
 
+Copy the
+[`_data.yml`](https://github.com/lumeland/theme-simple-blog/blob/main/src/_data.yml)
+file to your blog root folder and edit it with your data.
+
 ## Customization
 
-You can customize the blog creating the remote files in your local folder. For
-example, to change some style variables, create the file
-`_includes/css/variables.css` file in your local folder and edit the variables
-values:
-
-```css
-:root {
-  /* Light colors */
-  color-scheme: light;
-  --color-base: hsl(220, 30%, 10%);
-  --color-text: hsl(220, 30%, 20%);
-  --color-dim: hsl(220, 30%, 40%);
-  --color-link: hsl(220, 30%, 10%);
-  --color-link-hover: hsl(220, 30%, 40%);
-  --color-line: hsl(220, 30%, 90%);
-  --color-background: hsl(220, 30%, 100%);
-
-  /* Fonts */
-  --font-family-code: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  --font-family-ui: -apple-system, system-ui, sans-serif;
-
-  --font-code: 1rem/1.5 var(--font-family-code);
-  --font-display: bold clamp(2rem, 10vw, 4rem)/1 var(--font-family-ui);
-  --font-display-spacing: -0.02em;
-  --font-title: bold clamp(1.5rem, 8vw, 2rem)/1.2 var(--font-family-ui);
-  --font-title-spacing: -0.015em;
-  --font-body: clamp(1rem, 5vw, 1.2rem)/1.5 var(--font-family-ui);
-  --font-body-bold: bold var(--font-body);
-  --font-ui: 1rem/1.4 var(--font-family-ui);
-  --font-small: 0.85rem/1.4 var(--font-family-ui);
-
-  /* Space */
-  --row-gap-small: 2.5rem;
-  --row-gap-medium: clamp(2rem, 5vh, 5rem);
-}
-
-/* Dark colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --color-base: hsl(220, 20%, 100%);
-    --color-text: hsl(220, 20%, 80%);
-    --color-dim: hsl(220, 20%, 60%);
-    --color-link: hsl(220, 20%, 100%);
-    --color-link-hover: hsl(220, 20%, 70%);
-    --color-line: hsl(220, 20%, 20%);
-    --color-background: hsl(220, 20%, 10%);
-  }
-}
-```
+> [!tip]
+>
+> You can use [lumeCMS](https://lume.land/cms) to customize the blog and add
+> content easily
