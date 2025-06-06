@@ -11,7 +11,7 @@ bodyClass: body-post
 
   {{ if toc.length }}
   <nav class="toc">
-    <h2>Table of contents</h2>
+    <h2>{{ i18n.nav.toc }}</h2>
     <ol>
       {{ for item of toc }}
       <li>
@@ -49,17 +49,23 @@ bodyClass: body-post
   </aside>
   {{ /if }}
 
-  {{ if it.comments?.src }}
+  {{ if comments?.src || comments?.bluesky }}
   <aside class="comments-section">
     <header class="comments-header">
       <h2>{{ i18n.comments.title }}</h2>
-      <p>{{ i18n.comments.description.replace(":src:", it.comments.src) }}</p>
+      {{ if comments.bluesky && comments.src }}
+      <p>{{ i18n.comments.description_all.replace(":src:", comments.src).replace(":bluesky:", comments.bluesky) }}</p>
+      {{ else if comments.src }}
+      <p>{{ i18n.comments.description.replace(":src:", comments.src) }}</p>
+      {{ else }}
+      <p>{{ i18n.comments.description_bluesky.replace(":bluesky:", comments.bluesky) }}</p>
+      {{ /if }}
     </header>
-    <mastodon-comments src="{{ it.comments.src }}" cache="{{ it.comments.cache ?? 60 }}" class="comments">
+    <mastodon-comments bluesky="{{ it.comments.bluesky}}" mastodon="{{ it.comments.src }}" cache="{{ it.comments.cache ?? 60 }}" class="comments">
       {{ i18n.comments.empty }}
     </mastodon-comments>
-  {{ /if }}
   </aside>
+  {{ /if }}
 </article>
 
 <nav class="page-pagination pagination">
